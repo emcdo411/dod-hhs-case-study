@@ -44,18 +44,37 @@ We examine:
 ## 🧭 Visual Workflow Comparison
 
 ```mermaid
-graph TD
-  subgraph DoD Workflow
-    A1[Mission Need] --> A2[Prototype (OTA)]
-    A2 --> A3[Cloud-Hosted AI Tool]
-    A3 --> A4[Automated Action / Decision]
+flowchart TD
+
+  %% DoD Workflow
+  A1[Mission Need]
+  A2[Prototype (OTA)]
+  A3[Cloud-Hosted AI Tool]
+  A4[Automated Action / Decision]
+
+  A1 --> A2
+  A2 --> A3
+  A3 --> A4
+
+  %% HHS Workflow
+  B1[Citizen Request]
+  B2[Paper Form or Static PDF]
+  B3[Manual Data Entry]
+  B4[COBOL or Legacy Mainframe]
+  B5[Approval Delays / Backlogs]
+
+  B1 --> B2
+  B2 --> B3
+  B3 --> B4
+  B4 --> B5
+
+  %% Grouping for visual clarity
+  subgraph DoD_Workflow [DoD Workflow]
+    A1 --> A2 --> A3 --> A4
   end
 
-  subgraph HHS Workflow
-    B1[Citizen Request] --> B2[Paper Form or Static PDF]
-    B2 --> B3[Manual Data Entry]
-    B3 --> B4[COBOL or Legacy Mainframe]
-    B4 --> B5[Approval Delays / Backlogs]
+  subgraph HHS_Workflow [HHS Workflow]
+    B1 --> B2 --> B3 --> B4 --> B5
   end
 ```
 
@@ -112,3 +131,4 @@ The tools exist. What’s missing is a change in mindset, procurement agility, a
 
 > Written by [Erwin Maurice McDonald](https://github.com/emcdo411) as part of a larger digital modernization series
 > Tools used: GitHub, Mermaid.js, AI prompt engineering, Microsoft MSSA Cloud Dev workflow
+
