@@ -46,35 +46,43 @@ We examine:
 ```mermaid
 flowchart TD
 
-  %% DoD Workflow
+  %% DoD Workflow Nodes
   A1[Mission Need]
   A2[Prototype (OTA)]
   A3[Cloud-Hosted AI Tool]
   A4[Automated Action / Decision]
 
-  A1 --> A2
-  A2 --> A3
-  A3 --> A4
-
-  %% HHS Workflow
+  %% HHS Workflow Nodes
   B1[Citizen Request]
   B2[Paper Form or Static PDF]
   B3[Manual Data Entry]
   B4[COBOL or Legacy Mainframe]
   B5[Approval Delays / Backlogs]
 
+  %% Workflow Links
+  A1 --> A2
+  A2 --> A3
+  A3 --> A4
+
   B1 --> B2
   B2 --> B3
   B3 --> B4
   B4 --> B5
 
-  %% Grouping for visual clarity
-  subgraph DoD_Workflow [DoD Workflow]
-    A1 --> A2 --> A3 --> A4
+  %% Visual Grouping
+  subgraph "DoD Workflow"
+    A1
+    A2
+    A3
+    A4
   end
 
-  subgraph HHS_Workflow [HHS Workflow]
-    B1 --> B2 --> B3 --> B4 --> B5
+  subgraph "HHS Workflow"
+    B1
+    B2
+    B3
+    B4
+    B5
   end
 ```
 
