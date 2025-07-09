@@ -46,44 +46,17 @@ We examine:
 ```mermaid
 flowchart TD
 
-  %% DoD Workflow Nodes
-  A1[Mission Need]
-  A2[Prototype (OTA)]
-  A3[Cloud-Hosted AI Tool]
-  A4[Automated Action / Decision]
+  %% DoD Workflow
+  A1[Mission Need] --> A2[Prototype (OTA)] --> A3[Cloud-Hosted AI Tool] --> A4[Automated Action / Decision]
 
-  %% HHS Workflow Nodes
-  B1[Citizen Request]
-  B2[Paper Form or Static PDF]
-  B3[Manual Data Entry]
-  B4[COBOL or Legacy Mainframe]
-  B5[Approval Delays / Backlogs]
+  %% HHS Workflow
+  B1[Citizen Request] --> B2[Paper Form or Static PDF] --> B3[Manual Data Entry] --> B4[COBOL or Legacy Mainframe] --> B5[Approval Delays / Backlogs]
 
-  %% Workflow Links
-  A1 --> A2
-  A2 --> A3
-  A3 --> A4
-
-  B1 --> B2
-  B2 --> B3
-  B3 --> B4
-  B4 --> B5
-
-  %% Visual Grouping
-  subgraph "DoD Workflow"
-    A1
-    A2
-    A3
-    A4
-  end
-
-  subgraph "HHS Workflow"
-    B1
-    B2
-    B3
-    B4
-    B5
-  end
+  %% Grouping (visual only, not functional in GitHub rendering)
+  classDef dod fill:#e0f7fa,stroke:#006064,stroke-width:2px;
+  classDef hhs fill:#fce4ec,stroke:#880e4f,stroke-width:2px;
+  class A1,A2,A3,A4 dod;
+  class B1,B2,B3,B4,B5 hhs;
 ```
 
 ---
@@ -139,4 +112,5 @@ The tools exist. What’s missing is a change in mindset, procurement agility, a
 
 > Written by [Erwin Maurice McDonald](https://github.com/emcdo411) as part of a larger digital modernization series
 > Tools used: GitHub, Mermaid.js, AI prompt engineering, Microsoft MSSA Cloud Dev workflow
+
 
